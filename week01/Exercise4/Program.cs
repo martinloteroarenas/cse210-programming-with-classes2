@@ -31,7 +31,7 @@ class Program
                 largest = number;
             }
         }
-        float average = sum / numbersAmmount;
+        double average = sum / numbersAmmount;
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is {average}");
         Console.WriteLine($"The largest number is {largest}");
