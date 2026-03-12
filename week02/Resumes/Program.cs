@@ -5,12 +5,23 @@ class Program
     static void Main(string[] args)
     {
         Job job1 = new Job();
-
         job1._jobTitle = "Software Engeneer";
         job1._company = "Microsoft";
         job1._startYear = 2012;
         job1._endYear = 2015;
 
-        Console.WriteLine($"{job1._jobTitle} ({job1._company}) {job1._startYear} - {job1._endYear}");
+        Job job2 = new Job();
+        job2._jobTitle = "Manager";
+        job2._company = "Apple";
+        job2._startYear = 2016;
+        job2._endYear = 2018;
+
+        Resume person1 = new Resume();
+        person1._name = "Martin Lotero";
+
+        person1._jobs.Add(job1);
+        person1._jobs.Add(job2);
+
+        person1.DisplayResume();
     }
 }
