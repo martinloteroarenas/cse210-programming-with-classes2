@@ -1,5 +1,8 @@
 using System;
-
+/*i Keep a record of how many times something new was written per session
+in lines 13, 44 and 66 - 68
+in the class PromptGenerator when we take a random prompt is usual to repeat prompt
+because 5 is not enough so i added 5 propts more*/
 class Program
 {
     static void Main(string[] args)
@@ -7,6 +10,7 @@ class Program
         string choice;
         PromptGenerator aPrompt = new PromptGenerator();
         Journal aJournal = new Journal();
+        int entriesCount = 0;
 
         do
         {
@@ -36,6 +40,8 @@ class Program
                 anEntry._entryText = answer;
 
                 aJournal.AddEntry(anEntry);
+
+                entriesCount = entriesCount + 1;
                 /*Console.WriteLine($"{aJournal._entries[1]._entryText}");*/
             }
             else if (choice == "2")
@@ -54,10 +60,12 @@ class Program
                 string fileName = Console.ReadLine();
                 aJournal.LoadFromFile(fileName);
             }
-            
-        } while (choice != "5");
 
+        } while (choice != "5");
+        if (entriesCount != 0)
+        {
+            Console.WriteLine($"You wrote {entriesCount} new things today!");    
+        }
         Console.WriteLine("GoodBye!");
-        
     }
 }
