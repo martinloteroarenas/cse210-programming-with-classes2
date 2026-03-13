@@ -7,7 +7,7 @@ class Program
         string choice;
         PromptGenerator aPrompt = new PromptGenerator();
         Journal aJournal = new Journal();
-        
+
         do
         {
             Console.WriteLine("----------------------------------------------");
@@ -42,8 +42,19 @@ class Program
             {
                 aJournal.DisplayAll();
             }
-
-
+            else if (choice == "4")
+            {
+                Console.Write("What is teh filename? ");
+                string fileName = Console.ReadLine();
+                aJournal.SaveToFile(fileName);
+            }
+            else if (choice == "3")
+            {
+                Console.Write("What is teh filename? ");
+                string fileName = Console.ReadLine();
+                aJournal.LoadFromFile(fileName);
+            }
+            
         } while (choice != "5");
 
         Console.WriteLine("GoodBye!");
