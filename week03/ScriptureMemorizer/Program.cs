@@ -27,9 +27,9 @@ class Program
 
         while(answer != "q" && isHidden != true)
         {   
-            Console.Write("Press enter to continue or type 'q' to quit :");
+            Console.Write("Press enter to continue or type 'quit' to end the program :");
             answer = Console.ReadLine();
-            if (answer == "q")
+            if (answer == "quit")
             {
                 break;
             }
